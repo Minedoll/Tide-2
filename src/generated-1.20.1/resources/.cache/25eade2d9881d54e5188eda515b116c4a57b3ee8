@@ -1,0 +1,8 @@
+// 1.20.1	2026-01-05T19:40:34.4041228	Tide/minecraft:fishing Loot Table
+9697c9225ae6c17226c7e7292a1645fb4eedd465 data\tide\loot_tables\gameplay\fishing\ocean_monument.json
+5103733fc17d2b7cc9e145571b51706ee95f4785 data\tide\loot_tables\gameplay\fishing\junk_lava.json
+33183acd6d523af3f8cefaffed53818915d7fb46 data\tide\loot_tables\gameplay\fishing\treasure_nether.json
+ad16dd790f44ecadd4b3a8fca87ebcc45eb8e57c data\tide\loot_tables\gameplay\fishing\treasure_underground.json
+7a51d8c14e0e999b575bafc00de53e56c447be68 data\tide\loot_tables\gameplay\fishing\bonus_gold.json
+ab06f17a02edc362f31063839d6a2e1ef20a2bc7 data\tide\loot_tables\gameplay\fishing\junk_underground.json
+4c4df50eead811d30d28738025dc79b5fbdc2f2e data\tide\loot_tables\gameplay\fishing\desert_well.json

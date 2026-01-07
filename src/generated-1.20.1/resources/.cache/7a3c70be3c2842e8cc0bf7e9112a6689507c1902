@@ -1,0 +1,11 @@
+// 1.20.1	2026-01-05T19:40:34.4401946	Tide/minecraft:chest Loot Table
+702f0df1b017545a6882ea850f49ee5d74309dbb data\tide\loot_tables\chests\crates\underground.json
+6c2751bf26ae8e7f3fb9a519e7526207700deb09 data\tide\loot_tables\chests\crates\end.json
+5b9c4524efd0a1c0d66d2d6afbc11eb6e5505e88 data\tide\loot_tables\chests\crates\deep.json
+212370e8be44b55419435ac349624da9edafd161 data\tide\loot_tables\chests\crates\surface_freshwater.json
+3d6cc5f138839cd4ac27d03199431cd1fa787ec7 data\tide\loot_tables\chests\crates\underground_lava.json
+2a3529958cec322f6574b055b0b5fceef98f643c data\tide\loot_tables\chests\crates\nether.json
+320db93512e9050a849ae07c4589660e738bb344 data\tide\loot_tables\chests\crates\deep_lava.json
+01a55814bc86976c233b926a2e471ba9dc70b6b2 data\tide\loot_tables\chests\fishing_boat.json
+e2d0e488796e58635f9f1c42882849f0e624b927 data\tide\loot_tables\chests\crates\surface_saltwater.json
+27139a8d93d581b3bf487abd2e7a7818a1f7b372 data\tide\loot_tables\chests\crates\surface_lava.json

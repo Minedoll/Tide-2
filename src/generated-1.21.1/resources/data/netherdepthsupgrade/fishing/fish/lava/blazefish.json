@@ -1,0 +1,36 @@
+{
+  "behavior": "plateau",
+  "conditions": [
+    {
+      "type": "tide:dimension",
+      "dimensions": [
+        "minecraft:the_nether"
+      ]
+    },
+    {
+      "type": "tide:fluid",
+      "fluid": "lava"
+    }
+  ],
+  "display_data": {
+    "entity": "netherdepthsupgrade:blazefish",
+    "roll": 180.0,
+    "x": 0.1,
+    "z": 0.36
+  },
+  "fish": "netherdepthsupgrade:blazefish",
+  "journal_profile": {
+    "description": "journal.description.netherdepthsupgrade.blazefish",
+    "group": "lava",
+    "location": "journal.info.location.lava",
+    "rarity": "very_rare"
+  },
+  "selection_weight": 7.0,
+  "size": {
+    "record_high_cm": 210.0,
+    "typical_high_cm": 125.0,
+    "typical_low_cm": 80.0
+  },
+  "speed": 1.25,
+  "strength": 0.75
+}

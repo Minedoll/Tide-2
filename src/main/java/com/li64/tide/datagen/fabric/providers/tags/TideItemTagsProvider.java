@@ -1,0 +1,191 @@
+//? if fabric {
+package com.li64.tide.datagen.fabric.providers.tags;
+
+import com.li64.tide.Tide;
+import com.li64.tide.data.TideTags;
+import com.li64.tide.registries.TideFish;
+import com.li64.tide.registries.TideItems;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
+public class TideItemTagsProvider extends FabricTagProvider<Item> {
+    public TideItemTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+        super(output, Registries.ITEM, registries);
+    }
+
+    @Override
+    public @NotNull String getName() {
+        return "Item Tags";
+    }
+
+    @Override
+    protected void addTags(HolderLookup.@NotNull Provider provider) {
+        /* Mod specific tags */
+
+        getOrCreateTagBuilder(TideTags.Items.FISHING_RODS)
+                .add(Items.FISHING_ROD)
+                .add(TideItems.STONE_FISHING_ROD)
+                .add(TideItems.IRON_FISHING_ROD)
+                .add(TideItems.GOLDEN_FISHING_ROD)
+                .add(TideItems.CRYSTAL_FISHING_ROD)
+                .add(TideItems.DIAMOND_FISHING_ROD)
+                .add(TideItems.MIDAS_FISHING_ROD)
+                .add(TideItems.NETHERITE_FISHING_ROD);
+
+        getOrCreateTagBuilder(TideTags.Items.LINES)
+                .add(TideItems.FISHING_LINE)
+                .add(TideItems.BRAIDED_LINE)
+                .add(TideItems.REINFORCED_LINE)
+                .add(TideItems.GOLDEN_LINE);
+
+        getOrCreateTagBuilder(TideTags.Items.BOBBERS)
+                .add(TideItems.RED_FISHING_BOBBER)
+                .add(TideItems.ORANGE_FISHING_BOBBER)
+                .add(TideItems.YELLOW_FISHING_BOBBER)
+                .add(TideItems.LIME_FISHING_BOBBER)
+                .add(TideItems.GREEN_FISHING_BOBBER)
+                .add(TideItems.LIGHT_BLUE_FISHING_BOBBER)
+                .add(TideItems.CYAN_FISHING_BOBBER)
+                .add(TideItems.BLUE_FISHING_BOBBER)
+                .add(TideItems.PURPLE_FISHING_BOBBER)
+                .add(TideItems.MAGENTA_FISHING_BOBBER)
+                .add(TideItems.PINK_FISHING_BOBBER)
+                .add(TideItems.WHITE_FISHING_BOBBER)
+                .add(TideItems.LIGHT_GRAY_FISHING_BOBBER)
+                .add(TideItems.GRAY_FISHING_BOBBER)
+                .add(TideItems.BLACK_FISHING_BOBBER)
+                .add(TideItems.BROWN_FISHING_BOBBER)
+                .add(TideItems.APPLE_FISHING_BOBBER)
+                .add(TideItems.GOLDEN_APPLE_FISHING_BOBBER)
+                .add(TideItems.ENCHANTED_GOLDEN_APPLE_FISHING_BOBBER)
+                .add(TideItems.IRON_FISHING_BOBBER)
+                .add(TideItems.GOLDEN_FISHING_BOBBER)
+                .add(TideItems.DIAMOND_FISHING_BOBBER)
+                .add(TideItems.NETHERITE_FISHING_BOBBER)
+                .add(TideItems.AMETHYST_FISHING_BOBBER)
+                .add(TideItems.ECHO_FISHING_BOBBER)
+                .add(TideItems.CHORUS_FISHING_BOBBER)
+                .add(TideItems.FEATHER_FISHING_BOBBER)
+                .add(TideItems.LICHEN_FISHING_BOBBER)
+                .add(TideItems.NAUTILUS_FISHING_BOBBER)
+                .add(TideItems.PEARL_FISHING_BOBBER)
+                .add(TideItems.HEART_FISHING_BOBBER)
+                .add(TideItems.GRASSY_FISHING_BOBBER)
+                .add(TideItems.DUCK_FISHING_BOBBER);
+
+        getOrCreateTagBuilder(TideTags.Items.HOOKS)
+                .add(TideItems.FISHING_HOOK)
+                .add(TideItems.IRON_FISHING_HOOK)
+                .add(TideItems.LAVAPROOF_FISHING_HOOK)
+                .add(TideItems.VOID_FISHING_HOOK)
+                .addOptional(Tide.resource("hybrid-aquatic", "barbed_hook"))
+                .addOptional(Tide.resource("hybrid-aquatic", "glowing_hook"))
+                .addOptional(Tide.resource("hybrid-aquatic", "magnetic_hook"))
+                .addOptional(Tide.resource("hybrid-aquatic", "creepermagnet_hook"))
+                .addOptional(Tide.resource("hybrid-aquatic", "ominous_hook"));
+
+        getOrCreateTagBuilder(TideTags.Items.LAVA_BUCKETS)
+                .forceAddTag(TideTags.Convention.LAVA_BUCKETS)
+                .add(Items.LAVA_BUCKET);
+
+        getOrCreateTagBuilder(TideTags.Items.BAIT_PLANTS)
+                .forceAddTag(TideTags.Convention.CROPS)
+                .forceAddTag(TideTags.Convention.MUSHROOMS)
+                .forceAddTag(ItemTags.SMALL_FLOWERS);
+
+        getOrCreateTagBuilder(TideTags.Items.VANILLA_FISH)
+                .add(Items.COD)
+                .add(Items.SALMON)
+                .add(Items.TROPICAL_FISH)
+                .add(Items.PUFFERFISH);
+
+        getOrCreateTagBuilder(TideTags.Items.LEGENDARY_FISH)
+                .add(TideFish.SHOOTING_STARFISH)
+                .add(TideFish.COELACANTH)
+                .add(TideFish.DEVILS_HOLE_PUPFISH)
+                .add(TideFish.MIDAS_FISH)
+                .add(TideFish.ALPHA_FISH)
+                .add(TideFish.VOIDSEEKER)
+                .add(TideFish.DRAGON_FISH);
+
+        FabricTagBuilder fishBuilder = getOrCreateTagBuilder(TideTags.Items.FISH)
+                .forceAddTag(TideTags.Items.VANILLA_FISH);
+        TideFish.FISH_KEYS.forEach(fishBuilder::add);
+
+        FabricTagBuilder cookableFishBuilder = getOrCreateTagBuilder(TideTags.Items.COOKABLE_FISH);
+        TideFish.COOKABLE_FISH_MAP.values().stream().flatMap(List::stream).forEach(cookableFishBuilder::add);
+
+        FabricTagBuilder cookedFishBuilder = getOrCreateTagBuilder(TideTags.Items.COOKED_FISH)
+                .add(Items.COOKED_COD).add(Items.COOKED_SALMON);
+        TideFish.COOKABLE_FISH_MAP.forEach((cookedItem, rawItems) -> {
+            FabricTagBuilder cookableTag = getOrCreateTagBuilder(TideTags.Cookables.getCookableTag(cookedItem));
+            rawItems.forEach(cookableTag::add);
+            cookedFishBuilder.add(cookedItem);
+        });
+
+        getOrCreateTagBuilder(TideTags.Items.CRATES)
+                .add(TideItems.WOODEN_CRATE)
+                .add(TideItems.OBSIDIAN_CRATE)
+                .add(TideItems.PURPUR_CRATE);
+
+        /* Common tags */
+
+        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, Tide.resource("forge", "tools/fishing_rods")))
+                .forceAddTag(TideTags.Items.FISHING_RODS);
+
+        getOrCreateTagBuilder(ItemTags.FISHES).forceAddTag(TideTags.Items.FISH);
+
+        getOrCreateTagBuilder(TideTags.Convention.RAW_FISH_FOODS)
+                .addTag(TideTags.Items.COOKABLE_FISH)
+                .add(TideItems.FISH_SLICE);
+
+        getOrCreateTagBuilder(TideTags.Convention.COOKED_FISH_FOODS)
+                .addTag(TideTags.Items.COOKED_FISH)
+                .add(TideItems.COOKED_FISH_SLICE);
+
+        getOrCreateTagBuilder(TideTags.Convention.BOW_TOOLS).add(TideItems.STARLIGHT_BOW);
+
+        getOrCreateTagBuilder(ItemTags.SWORDS)
+                .add(TideFish.SAILFISH)
+                .add(TideFish.SWORDFISH)
+                .add(TideFish.BLAZING_SWORDFISH);
+
+        getOrCreateTagBuilder(ItemTags.LECTERN_BOOKS).add(TideItems.FISHING_JOURNAL);
+
+        //? if >=1.21 {
+        getOrCreateTagBuilder(ItemTags.CAT_FOOD).forceAddTag(TideTags.Items.COOKABLE_FISH);
+
+        getOrCreateTagBuilder(ItemTags.FISHING_ENCHANTABLE).forceAddTag(TideTags.Items.FISHING_RODS);
+        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE).add(TideItems.STARLIGHT_BOW);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
+                .forceAddTag(TideTags.Items.FISHING_RODS)
+                .add(TideItems.STARLIGHT_BOW);
+        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE)
+                .add(TideFish.SAILFISH)
+                .add(TideFish.SWORDFISH)
+                .add(TideFish.BLAZING_SWORDFISH);
+
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR).add(TideItems.DRAGONFIN_BOOTS);
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR_ENCHANTABLE).add(TideItems.DRAGONFIN_BOOTS);
+        //?}
+
+        /* Compat tags */
+
+        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, Tide.resource("stardew_fishing", "starts_minigame")))
+                .addTag(TideTags.Items.FISH);
+
+        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, Tide.resource("stardew_fishing", "legendary_fish")))
+                .addTag(TideTags.Items.LEGENDARY_FISH);
+    }
+}
+//?}

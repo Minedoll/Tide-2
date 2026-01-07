@@ -1,0 +1,106 @@
+//? if fabric {
+package com.li64.tide.datagen.fabric.providers.assets;
+
+import com.li64.tide.Tide;
+import com.li64.tide.registries.TideBlocks;
+import com.li64.tide.registries.TideFish;
+import com.li64.tide.registries.TideItems;
+import com.li64.tide.registries.blocks.FishDisplayBlock;
+import com.li64.tide.registries.blocks.FishDisplayShape;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.models.BlockModelGenerators;
+import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.data.models.blockstates.PropertyDispatch;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
+import net.minecraft.data.models.model.ModelTemplate;
+import net.minecraft.data.models.model.ModelTemplates;
+import net.minecraft.data.models.model.TextureSlot;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+
+import java.util.Optional;
+
+public class TideModelProvider extends FabricModelProvider {
+    private static final ModelTemplate FISH_SWORD_TEMPLATE = new ModelTemplate(
+            Optional.of(Tide.resource("item/fish_sword")),
+            Optional.empty(), TextureSlot.LAYER0);
+
+    public TideModelProvider(FabricDataOutput output) {
+        super(output);
+    }
+
+    @Override
+    public void generateBlockStateModels(BlockModelGenerators generator) {
+        generator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(TideBlocks.FISH_DISPLAY)
+                .with(PropertyDispatch.property(FishDisplayBlock.SHAPE).generate(shape ->
+                        Variant.variant().with(VariantProperties.MODEL, shape == FishDisplayShape.SHAPE_1x1
+                                ? Tide.resource("block/fish_display")
+                                : Tide.resource("block/fish_display_" + shape.getSerializedName()))
+                )).with(BlockModelGenerators.createHorizontalFacingDispatch()));
+    }
+
+    @Override
+    public void generateItemModels(ItemModelGenerators generator) {
+        generateBlockItem(generator, TideItems.ANGLING_TABLE);
+        generateBlockItem(generator, TideItems.WOODEN_CRATE);
+        generateBlockItem(generator, TideItems.OBSIDIAN_CRATE);
+        generateBlockItem(generator, TideItems.PURPUR_CRATE);
+
+        generator.generateFlatItem(TideItems.BAIT, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.LUCKY_BAIT, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.MAGNETIC_BAIT, ModelTemplates.FLAT_ITEM);
+
+        generator.generateFlatItem(TideItems.FISHING_HOOK, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.IRON_FISHING_HOOK, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.LAVAPROOF_FISHING_HOOK, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.VOID_FISHING_HOOK, ModelTemplates.FLAT_ITEM);
+
+        generator.generateFlatItem(TideItems.FISHING_LINE, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.BRAIDED_LINE, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.REINFORCED_LINE, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.GOLDEN_LINE, ModelTemplates.FLAT_ITEM);
+
+        generator.generateFlatItem(TideItems.FISHING_JOURNAL, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.FISHY_NOTE, ModelTemplates.FLAT_ITEM);
+
+        generator.generateFlatItem(TideItems.THERMOMETER, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.POCKET_WATCH, ModelTemplates.FLAT_ITEM);
+
+        generator.generateFlatItem(TideItems.ENCHANTED_POCKET_WATCH, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.DRAGONFIN_BOOTS, ModelTemplates.FLAT_ITEM);
+
+        generator.generateFlatItem(TideItems.FISH_BONE, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.OBSIDIAN_FRAGMENT, ModelTemplates.FLAT_ITEM);
+
+        generator.generateFlatItem(TideItems.JELLY_TORCH, ModelTemplates.FLAT_ITEM);
+
+        generator.generateFlatItem(TideItems.COOKED_FISH, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.SMALL_COOKED_FISH, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.LARGE_COOKED_FISH, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.GRILLED_TUNA, ModelTemplates.FLAT_ITEM);
+
+        generator.generateFlatItem(TideItems.FISH_SLICE, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.COOKED_FISH_SLICE, ModelTemplates.FLAT_ITEM);
+
+        TideFish.ORDERED.forEach(item -> {
+            if (item instanceof SwordItem) generator.generateFlatItem(item, FISH_SWORD_TEMPLATE);
+            else generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
+        });
+
+        TideFish.SPAWNING_ITEMS.forEach(item -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
+    }
+
+    private void generateBlockItem(ItemModelGenerators generator, Item blockItem) {
+        ResourceLocation path = BuiltInRegistries.ITEM.getKey(blockItem);
+        generator.generateFlatItem(blockItem, new ModelTemplate(
+                Optional.of(path.withPrefix("block/")),
+                Optional.empty()
+        ));
+    }
+}
+//?}
