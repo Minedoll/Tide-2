@@ -12,6 +12,7 @@
 ---
 ### Fixes
 - Fixed a crash when reeling in a fishing rod with Valkyrian Skies installed
+- Fixed a bug where the Starlight Bow's ammo conservation was applied to other weapons
 
 ## Tide v2.0 - Playtest 6
 
