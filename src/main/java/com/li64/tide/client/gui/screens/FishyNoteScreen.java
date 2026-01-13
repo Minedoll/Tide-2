@@ -45,7 +45,7 @@ public class FishyNoteScreen extends Screen {
         if (!components.isEmpty()) components.add(0, new HorizontalLineComponent(false));
         if (!(components.get(components.size() - 1) instanceof HorizontalLineComponent)) components.add(new HorizontalLineComponent(false));
 
-        this.components.add(0, new SilhouetteComponent(data.size()));
+        this.components.add(0, new SilhouetteComponent(data.size().orElse(null)));
         this.components.add(new RarityComponent(data.profile().rarity()));
 
         this.discovered = TidePlayerData.CLIENT_DATA.isFishUnlocked(data.fish());

@@ -47,10 +47,7 @@ public class TideTags {
         public static final TagKey<Fluid> LAVA_FISHING = TagKey.create(Registries.FLUID, Tide.resource("types/lava_fishing"));
     }
     public static class Entities {
-        public static final TagKey<EntityType<?>> FRESHWATER_FISH = TagKey.create(
-                Registries.ENTITY_TYPE, Tide.resource("freshwater_fish"));
-        public static final TagKey<EntityType<?>> SALTWATER_FISH = TagKey.create(
-                Registries.ENTITY_TYPE, Tide.resource("saltwater_fish"));
+        public static final TagKey<EntityType<?>> IGNORES_POCKET_WATCH = TagKey.create(Registries.ENTITY_TYPE, Tide.resource("ignores_pocket_watch"));
     }
 
     public static class Biomes {

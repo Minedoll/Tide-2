@@ -1,16 +1,5 @@
 {
   "values": [
-    "tide:guppy",
-    "tide:anchovy",
-    "tide:iron_tetra",
-    "tide:lapis_lanternfish",
-    "tide:gilded_minnow",
-    "tide:bedrock_tetra",
-    "tide:devils_hole_pupfish",
-    "tide:incandescent_larva",
-    "tide:bedrock_bug",
-    "tide:red_40",
-    "tide:dutchman_sock",
     "tide:arapaima",
     "tide:sand_tiger_shark",
     "tide:sturgeon",
@@ -28,7 +17,6 @@
     "tide:mantyvern",
     "tide:snatcher_squid",
     "tide:dragon_fish",
-    "tide:tuna",
     "tide:rainbow_trout",
     "tide:brook_trout",
     "tide:largemouth_bass",
@@ -86,6 +74,18 @@
     "tide:ender_glider",
     "tide:endergazer",
     "tide:violet_carp",
-    "tide:elytrout"
+    "tide:elytrout",
+    "tide:tuna",
+    "tide:guppy",
+    "tide:anchovy",
+    "tide:iron_tetra",
+    "tide:lapis_lanternfish",
+    "tide:gilded_minnow",
+    "tide:bedrock_tetra",
+    "tide:devils_hole_pupfish",
+    "tide:incandescent_larva",
+    "tide:bedrock_bug",
+    "tide:red_40",
+    "tide:dutchman_sock"
   ]
 }

@@ -3,6 +3,7 @@ package com.li64.tide.data.loot;
 import com.li64.tide.Tide;
 import com.li64.tide.TideConfig;
 import com.li64.tide.data.FishLengthHolder;
+import com.li64.tide.data.fishing.FishData;
 import com.li64.tide.data.item.TideItemData;
 import com.li64.tide.registries.TideLootFunctions;
 import com.mojang.serialization.MapCodec;
@@ -33,7 +34,8 @@ public class ApplyFishEntityLengthFunction implements LootItemFunction {
 
     @Override
     public ItemStack apply(ItemStack stack, LootContext context) {
-        if (Tide.CONFIG.items.fishItemSizes != TideConfig.Items.SizeMode.ALWAYS) return stack;
+        if (Tide.CONFIG.items.fishItemSizes != TideConfig.Items.SizeMode.ALWAYS
+                || FishData.get(stack).map(FishData::size).isEmpty()) return stack;
         Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
         if (entity == null) return stack;
         if (entity instanceof FishLengthHolder lengthHolder) {

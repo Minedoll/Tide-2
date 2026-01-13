@@ -49,6 +49,8 @@ public class TideLanguageProvider extends FabricLanguageProvider {
         builder.add("text.autoconfig.tide.option.VoidHeightEntry.Type.relative_to_bottom", "Relative to Bottom");
         builder.add("text.autoconfig.tide.option.VoidHeightEntry.Type.relative_to_top", "Relative to Top");
         builder.add("text.autoconfig.tide.option.VoidHeightEntry.Type.absolute", "Absolute Y");
+        builder.add("text.autoconfig.tide.option.general.autoFishDataBlacklist", "Auto Fish Data Blacklist");
+        builder.add("text.autoconfig.tide.option.general.autoFishDataBlacklist.@Tooltip", "Item IDs added to this list will never have their fish data auto-generated");
         builder.add("text.autoconfig.tide.option.general.crateWeight", "Crate Selection Weight");
         builder.add("text.autoconfig.tide.option.general.crateWeight.@Tooltip", "The chance of a crate being selected from the fishing loot table (not a percent, see wiki for more info)");
         builder.add("text.autoconfig.tide.option.general.crateQuality", "Crate Luck Scaling");
@@ -72,6 +74,8 @@ public class TideLanguageProvider extends FabricLanguageProvider {
         builder.add("text.autoconfig.tide.option.items.fishItemLifespan.@PrefixText", "The following only applies if Bucketable Fish Items is set to \"Only When Living\"");
         builder.add("text.autoconfig.tide.option.items.fishItemLifespan", "Fish Item Lifespan");
         builder.add("text.autoconfig.tide.option.items.fishItemLifespan.@Tooltip", "The duration, in seconds, of how long a fish item is bucketable after being caught");
+        builder.add("text.autoconfig.tide.option.items.enableBedrockBreakingItems", "Enable Bedrock-Breaking Items");
+        builder.add("text.autoconfig.tide.option.items.enableBedrockBreakingItems.@Tooltip", "Enables the bedrock eating functionality of the Chasm Eel item");
 
         builder.add("text.autoconfig.tide.option.journal.giveJournal", "Give Journal");
         builder.add("text.autoconfig.tide.option.journal.giveJournal.@Tooltip", "Give players a fishing journal upon joining a world for the first time");

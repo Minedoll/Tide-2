@@ -1,5 +1,6 @@
 package com.li64.tide.registries.items;
 
+import com.li64.tide.Tide;
 import com.li64.tide.data.TideTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -22,7 +23,7 @@ public class ChasmEelItem extends SimpleTooltipItem {
 
     @Override
     public @NotNull InteractionResult useOn(UseOnContext context) {
-        if (context.getPlayer() == null) return super.useOn(context);
+        if (context.getPlayer() == null || !Tide.CONFIG.items.enableBedrockBreakingItems) return super.useOn(context);
         ItemStack eelStack = context.getItemInHand();
         Level level = context.getPlayer().level();
         BlockState usedOn = level.getBlockState(context.getClickedPos());
@@ -37,6 +38,7 @@ public class ChasmEelItem extends SimpleTooltipItem {
 
     @Override
     public void addTooltip(ItemStack stack, Consumer<Component> tooltip) {
+        if (!Tide.CONFIG.items.enableBedrockBreakingItems) return;
         Style gray = Component.empty().getStyle().withColor(ChatFormatting.GRAY);
         tooltip.accept(Component.translatable("item.tide.chasm_eel.desc").setStyle(gray));
     }

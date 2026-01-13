@@ -91,6 +91,10 @@ public final class TideConfig implements ConfigData {
         }
 
         @ConfigEntry.Gui.Tooltip
+        @ConfigEntry.Gui.RequiresRestart
+        public List<String> autoFishDataBlacklist = List.of();
+
+        @ConfigEntry.Gui.Tooltip
         public double crateWeight = 4.0;
 
         @ConfigEntry.Gui.Tooltip
@@ -132,6 +136,9 @@ public final class TideConfig implements ConfigData {
         @ConfigEntry.Gui.PrefixText
         @ConfigEntry.Gui.Tooltip
         public long fishItemLifespan = 180;
+
+        @ConfigEntry.Gui.Tooltip
+        public boolean enableBedrockBreakingItems = true;
     }
 
     public static class Journal {

@@ -1,6 +1,7 @@
 //? if fabric {
 package com.li64.tide.datagen.fabric.providers.tags;
 
+import com.li64.tide.data.TideTags;
 import com.li64.tide.registries.TideEntityTypes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -25,6 +26,12 @@ public class TideEntityTypeTagsProvider extends FabricTagProvider<EntityType<?>>
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         getOrCreateTagBuilder(EntityTypeTags.ARROWS).add(TideEntityTypes.STAR_ARROW);
+
+        getOrCreateTagBuilder(TideTags.Entities.IGNORES_POCKET_WATCH)
+                .add(EntityType.ENDER_DRAGON)
+                .add(EntityType.WITHER)
+                .add(EntityType.ELDER_GUARDIAN)
+                .add(EntityType.WARDEN);
 
         //? if >=1.21 {
         var aquatic = getOrCreateTagBuilder(EntityTypeTags.AQUATIC);

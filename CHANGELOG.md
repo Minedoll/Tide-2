@@ -1,4 +1,19 @@
-## Changelog - Tide v2.0 Playtest 6
+## Tide v2.0.1 - 1/12/26
+
+---
+### Changes
+- Names of unlocked fish in the journal can be viewed by hovering over their icons
+- Fish size data is now entirely optional instead of defaulting to predefined parameters
+- Added a blacklist for auto-generated fish data in the config
+- Added a toggle for the Chasm Eel item's functionality in the config
+- Added `tide:ignores_pocket_watch` entity tag, a blacklist for the Enchanted Pocket Watch
+- Enemies frozen by the Enchanted Pocket Watch will stay frozen if the world is reloaded (TODO)
+
+---
+### Fixes
+- Fixed a crash when reeling in a fishing rod with Valkyrian Skies installed
+
+## Tide v2.0 - Playtest 6
 
 ---
 ### Changes
@@ -19,7 +34,7 @@
 - Issues with some fish entities spinning really quickly?
 - Animation issue with the fishing rods when using Hold My Items
 
-## Changelog - Tide v2.0 Playtest 5
+## Tide v2.0 - Playtest 5
 
 ---
 ### Changes
@@ -40,7 +55,7 @@
 
 ---
 
-## Changelog - Tide v2.0 Playtest 4
+## Tide v2.0 - Playtest 4
 
 ---
 ### Changes
@@ -72,7 +87,7 @@
 
 ---
 
-## Changelog - Tide v2.0 Playtest 3
+## Tide v2.0 - Playtest 3
 
 ---
 ### Changes
@@ -86,7 +101,7 @@ Same as previous
 
 ---
 
-## Changelog - Tide v2.0 Playtest 2
+## Tide v2.0 - Playtest 2
 
 ---
 ### Changes

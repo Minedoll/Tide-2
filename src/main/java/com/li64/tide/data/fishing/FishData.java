@@ -44,7 +44,6 @@ import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 
 import java.util.*;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public record FishData(/*? if >=1.21 {*/ Holder<Item> fish,
                        /*?} else*//*ResourceKey<Item> fishKey,*/
@@ -54,7 +53,8 @@ public record FishData(/*? if >=1.21 {*/ Holder<Item> fish,
                        double weight, double quality,
                        float strength, float speed,
                        MinigameBehavior behavior,
-                       SizeData size, ProfileData profile,
+                       Optional<SizeData> size,
+                       ProfileData profile,
                        Optional<DisplayData> display,
                        Optional<Holder<Item>> parent) implements FishingEntry/*? if <1.21 {*//*, ValidatableDataEntry*//*?}*/ {
     public static LootTable VANILLA_FISH_TABLE;
@@ -74,7 +74,7 @@ public record FishData(/*? if >=1.21 {*/ Holder<Item> fish,
             Codec.FLOAT.optionalFieldOf("strength", 0.3f).forGetter(FishData::strength),
             Codec.FLOAT.optionalFieldOf("speed", 1.0f).forGetter(FishData::speed),
             MinigameBehavior.CODEC.optionalFieldOf("behavior", MinigameBehavior.SINE).forGetter(FishData::behavior),
-            SizeData.CODEC.optionalFieldOf("size", new SizeData()).forGetter(FishData::size),
+            SizeData.CODEC.optionalFieldOf("size").forGetter(FishData::size),
             ProfileData.CODEC.optionalFieldOf("journal_profile", new ProfileData()).forGetter(FishData::profile),
             DisplayData.CODEC.optionalFieldOf("display_data").forGetter(FishData::display),
             BuiltInRegistries.ITEM.holderByNameCodec().optionalFieldOf("parent").forGetter(FishData::parent)
@@ -200,7 +200,7 @@ public record FishData(/*? if >=1.21 {*/ Holder<Item> fish,
     @Override
     public CatchResult getResult(FishingContext context) {
         ItemStack stack = new ItemStack(fish().value());
-        if (Tide.CONFIG.items.fishItemSizes == TideConfig.Items.SizeMode.ALWAYS)
+        if (Tide.CONFIG.items.fishItemSizes == TideConfig.Items.SizeMode.ALWAYS && size().isPresent())
             TideItemData.FISH_LENGTH.set(stack, this.getRandomLength(context.rng()));
         if (Tide.CONFIG.items.bucketableFishItems == TideConfig.Items.BucketableMode.WHEN_LIVING && bucket().isPresent())
             TideItemData.CATCH_TIMESTAMP.set(stack, context.level().getDayTime());
@@ -208,11 +208,15 @@ public record FishData(/*? if >=1.21 {*/ Holder<Item> fish,
     }
 
     public double getRandomLength(RandomSource rng) {
-        return size().sample(rng, 0.0);
+        SizeData sizeData = this.size().orElse(null);
+        if (sizeData == null) return 0.0;
+        return sizeData.sample(rng, 0.0);
     }
 
     public double getAverageLength() {
-        return (size.typicalHighCm() + size.typicalLowCm()) / 2.0;
+        SizeData sizeData = this.size().orElse(null);
+        if (sizeData == null) return 0.0;
+        return (sizeData.typicalHighCm() + sizeData.typicalLowCm()) / 2.0;
     }
 
     @Override
@@ -467,7 +471,7 @@ public record FishData(/*? if >=1.21 {*/ Holder<Item> fish,
                     ImmutableList.copyOf(modifiers),
                     weight, quality,
                     strength, speed, behavior,
-                    Optional.ofNullable(size).orElseGet(SizeData::new),
+                    Optional.ofNullable(size),
                     profile.build(),
                     Optional.ofNullable(display),
                     Optional.ofNullable(parent)
@@ -485,10 +489,10 @@ public record FishData(/*? if >=1.21 {*/ Holder<Item> fish,
             for (LootPoolEntryContainer container : pool.entries) {
                 if (!(container instanceof LootItem lootItem)) continue;
                 Item item = lootItem.item/*? if >=1.21 {*/.value()/*?}*/;
-                if (get(item).isPresent()) continue;
+                ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
+                if (Tide.CONFIG.general.autoFishDataBlacklist.contains(key.toString()) || get(item).isPresent()) continue;
                 Tide.LOG.info("Found unknown fish \"{}\" in vanilla fishing loot table, auto-generating fish data", item);
                 FishData data = builder().fish(item)
-                        .size(60.0, 100.0, 125.0)
                         .strength(0.5f)
                         .speed(0.9f)
                         .selectionWeight(30)
@@ -497,7 +501,6 @@ public record FishData(/*? if >=1.21 {*/ Holder<Item> fish,
                         .surface()
                         .journalGroup(JournalGroup.MISC)
                         .build();
-                ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
                 entries.put(key.withPrefix("generated/"), data);
             }
         }

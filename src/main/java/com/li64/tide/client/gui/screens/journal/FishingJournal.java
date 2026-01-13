@@ -268,9 +268,12 @@ public class FishingJournal extends Screen {
                             TidePlayerData.CLIENT_DATA.markAsRead(stack);
                             Tide.NETWORK.sendToServer(new ReadProfileMsg(stack));
                         }
-                        if (isUnlocked && didClick) {
-                            activeFish = stack;
-                            updatePage = true;
+                        if (isUnlocked) {
+                            graphics.renderTooltip(this.font, stack.getHoverName(), mouseX, mouseY);
+                            if (didClick) {
+                                activeFish = stack;
+                                updatePage = true;
+                            }
                         }
                     }
 

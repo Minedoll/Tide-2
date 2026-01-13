@@ -12,10 +12,13 @@ public class SilhouetteComponent extends ProfileComponent {
     private final FishSilhouette silhouette;
 
     public SilhouetteComponent(SizeData sizeData) {
-        double averageSize = (sizeData.typicalHighCm() + sizeData.typicalLowCm()) / 2.0;
-        if (averageSize < 35.0) this.silhouette = FishSilhouette.SMALL;
-        else if (averageSize < 100.0) this.silhouette = FishSilhouette.MEDIUM;
-        else this.silhouette = FishSilhouette.LARGE;
+        if (sizeData == null) this.silhouette = FishSilhouette.MEDIUM;
+        else {
+            double averageSize = (sizeData.typicalHighCm() + sizeData.typicalLowCm()) / 2.0;
+            if (averageSize < 35.0) this.silhouette = FishSilhouette.SMALL;
+            else if (averageSize < 100.0) this.silhouette = FishSilhouette.MEDIUM;
+            else this.silhouette = FishSilhouette.LARGE;
+        }
     }
 
     @Override

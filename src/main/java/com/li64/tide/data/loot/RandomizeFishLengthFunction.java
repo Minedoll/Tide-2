@@ -23,7 +23,8 @@ public class RandomizeFishLengthFunction implements LootItemFunction {
 
     @Override
     public ItemStack apply(ItemStack stack, LootContext context) {
-        if (Tide.CONFIG.items.fishItemSizes != TideConfig.Items.SizeMode.ALWAYS) return stack;
+        if (Tide.CONFIG.items.fishItemSizes != TideConfig.Items.SizeMode.ALWAYS
+                || FishData.get(stack).map(FishData::size).isEmpty()) return stack;
         FishData.get(stack).ifPresent(data -> TideItemData.FISH_LENGTH
                 .set(stack, data.getRandomLength(context.getRandom())));
         return stack;

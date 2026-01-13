@@ -164,8 +164,8 @@ public class TideItems {
 
             TideFish.ORDERED.forEach(item -> {
                 ItemStack stack = new ItemStack(item);
-                if (Tide.CONFIG.items.fishItemSizes == TideConfig.Items.SizeMode.ALWAYS) FishData.get(stack)
-                        .ifPresent(data -> TideItemData.FISH_LENGTH.set(stack, data.getAverageLength()));
+                if (Tide.CONFIG.items.fishItemSizes == TideConfig.Items.SizeMode.ALWAYS|| FishData.get(stack).map(FishData::size).isPresent())
+                    FishData.get(stack).ifPresent(data -> TideItemData.FISH_LENGTH.set(stack, data.getAverageLength()));
                 DISPLAY_ITEMS.add(stack);
 
                 ResourceLocation itemKey = BuiltInRegistries.ITEM.getKey(item);
