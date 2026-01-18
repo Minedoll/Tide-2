@@ -1,6 +1,5 @@
 package com.li64.tide.registries.entities.fish;
 
-import com.li64.tide.Tide;
 import com.li64.tide.compat.seasons.SeasonsCompat;
 import com.li64.tide.data.fishing.FishData;
 import com.li64.tide.data.fishing.FishingContext;
