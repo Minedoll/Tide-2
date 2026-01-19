@@ -45,7 +45,7 @@ public class FishSatchelItem extends SimpleTooltipItem {
     public static int getFishCount(ItemStack stack) {
         BundleContents contents = stack.get(DataComponents.BUNDLE_CONTENTS);
         if (contents == null) return 0;
-        return contents.size();
+        return contents.itemCopyStream().mapToInt(ItemStack::getCount).sum();
     }
 
     @Override
@@ -61,7 +61,7 @@ public class FishSatchelItem extends SimpleTooltipItem {
         if (action != ClickAction.SECONDARY) return false;
         BundleContents contents = stack.get(DataComponents.BUNDLE_CONTENTS);
         ItemStack other = slot.getItem();
-        if (contents == null) return false;
+        if (contents == null || getFishCount(stack) + other.getCount() > 64) return false;
         BundleContents.Mutable mutable = new BundleContents.Mutable(contents);
 
         if (other.isEmpty()) {
@@ -87,7 +87,7 @@ public class FishSatchelItem extends SimpleTooltipItem {
 
     public boolean overrideOtherStackedOnMe(ItemStack stack, ItemStack other, Player player, SlotAccess access) {
         BundleContents contents = stack.get(DataComponents.BUNDLE_CONTENTS);
-        if (contents == null) return false;
+        if (contents == null || getFishCount(stack) + other.getCount() > 64) return false;
         BundleContents.Mutable mutable = new BundleContents.Mutable(contents);
 
         if (other.isEmpty()) {

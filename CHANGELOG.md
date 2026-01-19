@@ -2,7 +2,7 @@
 
 ---
 ### Changes
-- Added a few new informational items
+- Added a few new fish finding items
   - Added the Lunar Calendar for displaying the moon phase
   - Added the Depth Meter for displaying the depth below sea level
   - Added the Weather Radio for displaying upcoming weather conditions
