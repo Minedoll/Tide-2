@@ -250,6 +250,18 @@ public class TideRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy("has_iron_ingot", has(TideTags.Convention.IRON_INGOTS))
                 .save(output);
 
+        shaped(RecipeCategory.TOOLS, TideItems.WEATHER_RADIO, 1)
+                .pattern(" L ")
+                .pattern("#R#")
+                .pattern("###")
+                .define('#', TideTags.Convention.COPPER_INGOTS)
+                .define('L', Items.LIGHTNING_ROD)
+                .define('R', TideTags.Convention.REDSTONE_DUSTS)
+                .unlockedBy("has_copper_ingot", has(TideTags.Convention.COPPER_INGOTS))
+                .unlockedBy("has_lightning_rod", has(Items.LIGHTNING_ROD))
+                .unlockedBy("has_redstone", has(TideTags.Convention.REDSTONE_DUSTS))
+                .save(output);
+
         shaped(RecipeCategory.MISC, TideItems.LUCKY_BAIT, 16)
                 .pattern("###")
                 .pattern("#R#")

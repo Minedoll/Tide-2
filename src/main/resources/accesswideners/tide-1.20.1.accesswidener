@@ -24,6 +24,7 @@ accessible field net/minecraft/world/item/BucketItem content Lnet/minecraft/worl
 accessible field net/minecraft/world/level/storage/loot/LootTable pools [Lnet/minecraft/world/level/storage/loot/LootPool;
 accessible field net/minecraft/world/level/storage/loot/entries/LootItem item Lnet/minecraft/world/item/Item;
 accessible field net/minecraft/world/entity/Entity random Lnet/minecraft/util/RandomSource;
+accessible field net/minecraft/server/level/ServerLevel serverLevelData Lnet/minecraft/world/level/storage/ServerLevelData;
 
 # Classes
 accessible class net/minecraft/client/renderer/RenderStateShard$ShaderStateShard

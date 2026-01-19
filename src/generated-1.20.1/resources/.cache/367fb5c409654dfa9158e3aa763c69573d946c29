@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-18T11:52:19.7775629	Tide/Recipes
+// 1.20.1	2026-01-19T07:22:29.8953625	Tide/Recipes
 3276e90d458094c88e69fa67ffd7a3010ad5132e data\tide\recipes\enchanted_pocket_watch.json
 12a9964473dce48f4410e3442bd5da9548cd8457 data\tide\advancements\recipes\decorations\angling_table.json
 58b83e1bd9a95c5baec9885f9a08a97f87351acb data\tide\recipes\small_cooked_fish_campfire_cooking.json
@@ -17,6 +17,7 @@ dfd78e012f61832b69d9789884d99d83755c9943 data\tide\advancements\recipes\food\lar
 62d184d21e172e54537ca02338faf3173bd20037 data\tide\advancements\recipes\tools\iron_rod_smithing.json
 c231990a78dddc87bab3f9e14866ac60af0d7a57 data\tide\advancements\recipes\misc\bone_meal_from_fish_bone.json
 281a909d32171c1e3e523705e07df41757ae121c data\tide\advancements\recipes\misc\iron_from_tetra.json
+d5ba2fb68ff98a07bf199f9a95cb0ab2db9a6da8 data\tide\recipes\depth_meter.json
 52bd1f6bbc87e0129be637e55ea9a73696ff9498 data\tide\advancements\recipes\food\small_cooked_fish_smoking.json
 e35dbb568d2eeb57e7966221ae8b7abba7f63489 data\tide\recipes\bobbers\yellow.json
 89c9d16d6e6b9fc6477f597bca9bcb18e80fb1b8 data\tide\recipes\amethyst_from_shrimp.json
@@ -50,6 +51,7 @@ e7332da4d7a414dbf5192e368dc8b97b98139620 data\tide\advancements\recipes\misc\bob
 1203cc4fa05740b38df9cf2279412b148adab0d1 data\tide\advancements\recipes\misc\bobbers\cyan.json
 b5a19203084480ad6316b1ba8bef37cc57a8753c data\tide\recipes\bait.json
 8ac04e638b3835e50c80c13fe7d89d5fa6367c75 data\tide\recipes\bobbers\lime.json
+5563083dde093e900419c4678c78d454288775d7 data\tide\recipes\weather_radio.json
 d828116361aaf144b5e225fd08aafeca8d266ea5 data\tide\advancements\recipes\misc\lapis_from_lanternfish.json
 f396f2462b0a6a9e48c183d7d09ca3aa0b1dd311 data\tide\recipes\bobbers\diamond.json
 cf81ab7de9c10a23a7c18251353eaf242973d519 data\tide\recipes\bobbers\pearl.json
@@ -69,6 +71,7 @@ f9d0cb7e5a2c1e39d59ee000fd36ee3a7421b88e data\tide\recipes\grilled_tuna_smelting
 a050455c30dfc61aee25db22dad7331161e2012e data\tide\advancements\recipes\misc\wooden_crate.json
 f0266d7ed9ed3564912532e9c2abe6d730ac3843 data\tide\recipes\cooked_fish_smoking.json
 5b800629c32be4e598206f5c2f877e2f2024f51a data\tide\recipes\bobbers\chorus.json
+d8a8d1d1b65735db8303620694ae91cdf2e94baa data\tide\advancements\recipes\tools\depth_meter.json
 1ee567e86cd3a80f427b6470d3fec2ff80ee21e2 data\tide\advancements\recipes\tools\netherite_rod_smithing.json
 d786154bd86180a130552b8fae4463c819d75d00 data\tide\recipes\angling_table.json
 027d48d11bfd8bd17e79c6abc1eda2159813cd25 data\tide\recipes\fishing_hook.json
@@ -79,6 +82,7 @@ d786154bd86180a130552b8fae4463c819d75d00 data\tide\recipes\angling_table.json
 8b51cabd4f12f8d1818f4aa44a6a7fd7833f8cba data\tide\recipes\membrane_from_elytrout.json
 5ced20992fb903f3fe916cb42e4be58af90cde79 data\tide\recipes\large_cooked_fish_smoking.json
 3cee033d77a8c9f522cebfc57a68b5b35cd8f7ea data\tide\recipes\cooked_fish_slice_smelting.json
+1ece3d3c0a66ef7807d366becd250d7ec46809f1 data\tide\recipes\lunar_calendar.json
 87d3e71d8f9d498618125bb83096e7caf3729244 data\tide\recipes\cooked_fish_slice_smoking.json
 b43c7ef6269d643db4532a12e119bc6af0710e5c data\tide\recipes\bobbers\white.json
 18ed74f64ebeedd4022f8553d4c7cf056d072fe9 data\tide\advancements\recipes\misc\lucky_bait.json
@@ -114,6 +118,7 @@ ffb34357ce74eddf9fd115293e389669e561fa65 data\tide\recipes\bobbers\gray.json
 87c57c187e48ebb669cd26a6709e36aa4bab9337 data\tide\recipes\midas_rod_smithing.json
 c46dddca3f2fb500311f059c05388968c4361a3a data\tide\recipes\fishing_journal.json
 d80f26c79424c1e29edcdcb1484046f4254ae707 data\tide\recipes\jelly_torch_from_jellyfish.json
+2e93e38ae39ec1c5a2d8112694f3ab15f143164c data\tide\advancements\recipes\tools\weather_radio.json
 c82250d4a0b43abce5467359bc32e5750eaa8864 data\tide\recipes\diamond_rod_smithing.json
 4c7d416b01d3e812e75e73a669747cfd00630392 data\tide\recipes\large_cooked_fish_smelting.json
 d3d271f751ca318806b4cd52ab64724a24999918 data\tide\advancements\recipes\misc\bobbers\netherite.json
@@ -122,11 +127,12 @@ d3d271f751ca318806b4cd52ab64724a24999918 data\tide\advancements\recipes\misc\bob
 2da10b18c52879c3184e955cb179d5c6dcefcc7e data\tide\recipes\fish_display.json
 ebfde79bc397dc93b3a533e3e56b413bec4a0b49 data\tide\recipes\pearl_from_enderfin.json
 6c62109c65ebf362b431e9e0aca032646450469c data\tide\recipes\cooked_fish_smelting.json
+a5cb44afd28fbaed2375743b30fd8ce8fa07c3c0 data\tide\advancements\recipes\tools\lunar_calendar.json
 76f3e97e0c082efa20dbe3d765276f6306bd22a7 data\tide\recipes\eye_from_endergazer.json
 89353e9532248e85e6782f107f6c79d467a7282e data\tide\advancements\recipes\misc\bobbers\golden_apple.json
 d8d0a0881ac85ae35ae741ee0e4a363f434cf291 data\tide\recipes\wooden_crate.json
-a90612b61538e7703c3c4a8abd4ceee05674f584 data\tide\advancements\recipes\misc\bobbers\brown.json
 c7352334710d54f5eb41cbf68bb0195d02781c5d data\tide\advancements\recipes\misc\bobbers\gray.json
+a90612b61538e7703c3c4a8abd4ceee05674f584 data\tide\advancements\recipes\misc\bobbers\brown.json
 1a19fb18dbb75e04fde1a34955edbc1c69848730 data\tide\advancements\recipes\misc\bobbers\green.json
 1a5a0543ba965d7cfd45c1d6adb1c5fe3ad723c6 data\tide\advancements\recipes\food\grilled_tuna_smoking.json
 c3e5a381567756dde0a8d9e93aa054e5b82e7de9 data\tide\advancements\recipes\tools\enchanted_pocket_watch.json
@@ -152,7 +158,7 @@ db0cbe6d254923d48dd043526149e240fa924985 data\tide\recipes\cooked_fish_slice_cam
 70545515460f169dd08e7a7e8cdbec8bc7f97818 data\tide\recipes\void_fishing_hook.json
 9ed89e3bf5460e761c86706f5599519f2ce0ebc0 data\tide\recipes\starlight_bow.json
 7901823f7be6c5adf4c619b8fc0ecd5d48de4811 data\tide\recipes\small_cooked_fish_smoking.json
-f84900c3722af118a3e0d23b89481fa1aa9effeb data\tide\advancements\recipes\tools\climate_gauge.json
+5909017230d5f24a0ab1353b5009089940298558 data\tide\advancements\recipes\tools\climate_gauge.json
 9e00f3510758ecbf57dadc9ed394a66b08fcf0ea data\tide\recipes\bobbers\iron.json
 4c63daf5ed9b2c05fe2b7411c13bdaf8bd4832b1 data\tide\recipes\bobbers\netherite.json
 f79fb3191b6b66cd150daad71682b04eaecfc7ea data\tide\advancements\recipes\misc\magnetic_bait.json

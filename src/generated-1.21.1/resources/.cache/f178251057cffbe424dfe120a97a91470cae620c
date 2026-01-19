@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-18T17:19:58.8418336	Tide/Item Tags
+// 1.21.1	2026-01-18T19:32:28.0795109	Tide/Item Tags
 20c22439a081d44c87dcd484248d55541ce3dc66 data\stardew_fishing\tags\item\legendary_fish.json
 774560bc1c797fc50cda13337b5934297bda3177 data\tide\tags\item\bobbers.json
 faaea66210f157e462b8db98fc6231ef5799dfa0 data\tide\tags\item\cat_food.json
@@ -14,14 +14,14 @@ dc8014c1015ed3a7f7b9cc1afbcae7c7e9a30c6c data\stardew_fishing\tags\item\starts_m
 627b4e7678b67d7119f535d9c21ca03d163c0997 data\tide\tags\item\lava_buckets.json
 dc8014c1015ed3a7f7b9cc1afbcae7c7e9a30c6c data\minecraft\tags\item\fishes.json
 b0bfa4d18f7f7e0a2b2d1d516117e17586c7401e data\minecraft\tags\item\enchantable\foot_armor.json
-8f5b93a9547f792db798f2523aace39576d6338b data\minecraft\tags\item\cat_food.json
 00796d7e0e4190e458803a198ed652ddf6f7d2ac data\minecraft\tags\item\enchantable\fishing.json
+8f5b93a9547f792db798f2523aace39576d6338b data\minecraft\tags\item\cat_food.json
 b0bfa4d18f7f7e0a2b2d1d516117e17586c7401e data\minecraft\tags\item\foot_armor.json
-9ca6b796bd7e998336b858523c9734940fa71a30 data\tide\tags\item\cookable_fish.json
+21e408724f0cbe581e7013dd1aa44e31c22c6dfe data\tide\tags\item\cookable_fish.json
 3a4cacae65cf5bd790d55cfeb5ccc3b466b48b3b data\minecraft\tags\item\enchantable\bow.json
 28316214217daa5e11ca40eee1044e02a073c450 data\minecraft\tags\item\enchantable\sword.json
-8a883d8fdd6efd4fd9c3213d9035c86c9dca160d data\tide\tags\item\cooked_fish.json
 10847f9868c43d042b6a5f0197c406f04ce228ef data\minecraft\tags\item\enchantable\durability.json
+404414dd168d1fd627ecb11de3a92e5c8cbbfb21 data\tide\tags\item\cooked_fish.json
 28316214217daa5e11ca40eee1044e02a073c450 data\minecraft\tags\item\swords.json
 9848e89ff245bbfdc2c682369771182a82878a8b data\tide\tags\item\vanilla_fish.json
 d6f20dfb49b76604c8e36f436db481f96e4f5997 data\tide\tags\item\legendary_fish.json

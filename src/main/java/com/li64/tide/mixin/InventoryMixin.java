@@ -26,7 +26,7 @@ public class InventoryMixin {
         for (ItemStack checked : this.items) {
             if (!(checked.getItem() instanceof FishSatchelItem satchelItem)) continue;
             if (!TideItemData.FISH_SATCHEL_OPENED.getOrDefault(checked, false)) continue;
-            cir.setReturnValue(satchelItem.overrideOtherStackedOnMe(checked, stack, player, new SlotAccess() {
+            if (satchelItem.overrideOtherStackedOnMe(checked, stack, player, new SlotAccess() {
                 @Override
                 public @NotNull ItemStack get() {
                     return checked;
@@ -36,7 +36,7 @@ public class InventoryMixin {
                 public boolean set(ItemStack carried) {
                     return false;
                 }
-            }));
+            })) cir.setReturnValue(true);
         }
     }
 }

@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-18T17:19:58.8498422	Tide/minecraft:entity Loot Table
+// 1.21.1	2026-01-18T19:32:28.0955182	Tide/minecraft:entity Loot Table
 6d7e3dfd447aafa8f317d23c5af3774b0b3fb595 data\tide\loot_table\entities\vengeance.json
 ea7a4d9157484ea0b44d7c5f407ac6733af118ac data\tide\loot_table\entities\volcano_tuna.json
 e653045e8f4813b8da0f7218098d05c8e47df981 data\tide\loot_table\entities\smallmouth_bass.json
@@ -99,5 +99,5 @@ bcdd3ea90483a0ff18ce518e71830c61411addc5 data\tide\loot_table\entities\mantyvern
 ce1a10d05e8c3610134001126e1853bdb71ab6db data\tide\loot_table\entities\incandescent_larva.json
 4165f1c4a11c17f1ce4e70c50fcda4059bffb7c6 data\tide\loot_table\entities\brook_trout.json
 908eac6a5d4f0270cb45debcfdcc24f5ea6969f4 data\tide\loot_table\entities\white_crappie.json
-bb98b99aee1b83e6131b1c77a73e55af893ffad6 data\tide\loot_table\entities\snook.json
 85e882715b4fae571ef8edad65215370667258d8 data\tide\loot_table\entities\luminescent_jellyfish.json
+bb98b99aee1b83e6131b1c77a73e55af893ffad6 data\tide\loot_table\entities\snook.json

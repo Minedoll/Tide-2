@@ -166,6 +166,7 @@ public class TideLanguageProvider extends FabricLanguageProvider {
         builder.add(TideItems.LUNAR_CALENDAR, "Lunar Calendar");
         builder.add(TideItems.CLIMATE_GAUGE, "Climate Gauge");
         builder.add(TideItems.DEPTH_METER, "Depth Meter");
+        builder.add(TideItems.WEATHER_RADIO, "Weather Radio");
 
         builder.add(TideItems.ENCHANTED_POCKET_WATCH, "Enchanted Pocket Watch");
         builder.add(TideItems.STARLIGHT_BOW, "Starlight Bow");
@@ -348,6 +349,11 @@ public class TideLanguageProvider extends FabricLanguageProvider {
         builder.add("item.tide.climate_gauge.desc_0", "Displays biome temperature");
         builder.add("item.tide.climate_gauge.desc_1", "Unaffected by weather or seasonal changes");
         builder.add("item.tide.depth_meter.desc", "Displays the depth below sea level");
+        builder.add("item.tide.weather_radio.desc", "Displays upcoming weather conditions");
+        builder.add("item.tide.weather_radio.forecast", "%s in %s");
+        builder.add("item.tide.weather_radio.forecast.seconds", "%s seconds");
+        builder.add("item.tide.weather_radio.forecast.minutes", "%s minutes");
+        builder.add("item.tide.weather_radio.forecast.hours", "%s hours");
 
         builder.add("item.tide.braided_line.desc", "Increases rod charge speed");
         builder.add("item.tide.reinforced_line.desc", "Increases rod durability");

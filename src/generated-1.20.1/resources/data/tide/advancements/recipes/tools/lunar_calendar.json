@@ -1,21 +1,37 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_iron_nugget": {
+    "has_ink_sac": {
       "conditions": {
         "items": [
           {
-            "tag": "c:nuggets/iron"
+            "items": [
+              "minecraft:ink_sac"
+            ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_redstone": {
+    "has_paper": {
       "conditions": {
         "items": [
           {
-            "tag": "c:dusts/redstone"
+            "items": [
+              "minecraft:paper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spyglass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:spyglass"
+            ]
           }
         ]
       },
@@ -23,21 +39,22 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tide:climate_gauge"
+        "recipe": "tide:lunar_calendar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_redstone",
-      "has_iron_nugget",
+      "has_paper",
+      "has_ink_sac",
+      "has_spyglass",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tide:climate_gauge"
+      "tide:lunar_calendar"
     ]
   },
   "sends_telemetry_event": false

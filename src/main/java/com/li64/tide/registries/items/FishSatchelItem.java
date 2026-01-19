@@ -197,7 +197,7 @@ public class FishSatchelItem extends BundleItem implements TooltipItem {
 
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public static boolean canPutInSatchel(ItemStack stack) {
-        return stack.is(TideTags.Items.FISH) || FishData.get(stack).isPresent();
+        return (stack.is(TideTags.Items.FISH) || FishData.get(stack).isPresent());
     }
 
     public static int getFishCount(ItemStack stack) {
@@ -208,6 +208,7 @@ public class FishSatchelItem extends BundleItem implements TooltipItem {
     public boolean overrideStackedOnOther(ItemStack stack, Slot slot, ClickAction action, Player player) {
         if (action != ClickAction.SECONDARY) return false;
         ItemStack other = slot.getItem();
+        if (getFishCount(stack) + other.getCount() > 64) return false;
         if (other.isEmpty()) {
             this.playRemoveOneSound(player);
             removeOne(stack).ifPresent(removed -> add(stack, slot.safeInsert(removed)));
@@ -228,6 +229,7 @@ public class FishSatchelItem extends BundleItem implements TooltipItem {
     }
 
     public boolean overrideOtherStackedOnMe(ItemStack stack, ItemStack other, Player player, SlotAccess access) {
+        if (getFishCount(stack) + other.getCount() > 64) return false;
         if (other.isEmpty()) {
             removeOne(stack).ifPresent(itemStack -> {
                 this.playRemoveOneSound(player);

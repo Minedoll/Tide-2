@@ -29,6 +29,7 @@ public class TideVoidFish extends TideFishEntity {
 
     @Override
     public void travel(@NotNull Vec3 movement) {
+        if (this.isInVoid()) this.resetFallDistance();
         if (this.isEffectiveAi() && this.isInWater()) {
             this.moveRelative(this.getSpeed() / 50f, movement);
             this.move(MoverType.SELF, this.getDeltaMovement());

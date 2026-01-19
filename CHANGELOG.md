@@ -2,13 +2,18 @@
 
 ---
 ### Changes
-- Renamed Thermometer to Climate Gauge
-- Added the Lunar Calendar for displaying the moon phase
-- Added the Depth Meter for displaying the depth below sea level
+- Added a few new informational items
+  - Added the Lunar Calendar for displaying the moon phase
+  - Added the Depth Meter for displaying the depth below sea level
+  - Added the Weather Radio for displaying upcoming weather conditions
+- Renamed the Thermometer to "Climate Gauge"
 
 ---
 ### Fixes
 - Fixed a bug where fish could not be used to tame cats on 1.20.1
+- Fixed a bug where void fish would take fall damage while swimming
+- Fixed a bug where fish could overflow a fish satchel when it was opened
+- Fixed a periodic crash with ItemModelProperties on neo/forge
 - Fixed a NoSuchMethodError crash on Fabric 1.20.1
 - Fixed a server startup crash on Fabric 1.20.1
 - Fixed a server startup crash on Forge 1.20.1
